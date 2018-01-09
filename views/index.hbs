@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+   <HEAD>
+      <TITLE>
+         Heroku 
+      </TITLE>
+   </HEAD>
+<BODY>
+  <form action="/" method="post">
+      <input type="text" name="location" placeholder="Podaj lokalizacje"><br>
+      <input type="submit" value="Submit">
+  </form>
+  <script>
+    var map;
+    function initMap() {
+      let lat = {{lat}};
+      let lng = {{lng}};
+      console.log('lat:',lat,"!");
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: lat, lng: lng},
+        zoom: 8
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHXHYMYiJkWjYswX-fvdLArz3R27oYg_k&callback=initMap"
+  async defer></script>
+  <div id="map"></div> 
+</form>
+</form>
+</BODY>
+</HTML>
